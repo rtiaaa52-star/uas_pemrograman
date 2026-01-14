@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UD. FIKTIN JAYA LIFT - Solusi Bangunan & Sewa Lift Cor</title>
+    <meta name="description"
+        content="UD. FIKTIN JAYA LIFT menyediakan besi dan material bangunan berkualitas tinggi. Solusi kokoh untuk konstruksi masa depan.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Outfit:wght@400;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        :root {
+            --primary-red: #DC2626;
+            --dark-red: #991B1B;
+            --light-red: #FEE2E2;
+            --black: #0F172A;
+            --dark-gray: #1E293B;
+            --medium-gray: #64748B;
+            --light-gray: #F1F5F9;
+            --white: #FFFFFF;
+            --glass: rgba(255, 255, 255, 0.9);
+            --font-heading: 'Outfit', sans-serif;
+            --font-body: 'Inter', sans-serif;
+            --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            line-height: 1.6;
+            color: var(--dark-gray);
+            background-color: var(--white);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: var(--font-heading);
+            color: var(--black);
+            line-height: 1.2;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.875rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: var(--primary-red);
+            color: var(--white);
+            box-shadow: 0 10px 15px -3px rgba(220, 38, 38, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: var(--dark-red);
+            transform: translateY(-3px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--white);
+            color: var(--white);
+        }
+
+        .btn-outline:hover {
+            background: var(--white);
+            color: var(--primary-red);
+        }
+
+        .btn-whatsapp {
+            background: #25D366;
+            color: white;
+            width: 100%;
+            justify-content: center;
+        }
+
+        .btn-whatsapp:hover {
+            background: #128C7E;
+            transform: translateY(-3px);
+        }
+
+        /* Navbar */
+        .navbar {
+            height: 80px;
+            display: flex;
+            align-items: center;
+            background: var(--glass);
+            backdrop-filter: blur(15px);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .logo {
+            font-size: 1.75rem;
+            font-weight: 800;
+            color: var(--black);
+        }
+
+        .logo span {
+            color: var(--primary-red);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+        }
+
+        .nav-links a {
+            font-weight: 600;
+            color: var(--medium-gray);
+            cursor: pointer;
+        }
+
+        .nav-links a.active {
+            color: var(--primary-red);
+        }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 6px;
+            cursor: pointer;
+        }
+
+        .menu-toggle span {
+            width: 30px;
+            height: 3px;
+            background: var(--black);
+        }
+
+        /* Page Transitions */
+        .page-content {
+            display: none;
+            animation: fadeIn 0.5s ease-out;
+            padding-top: 80px;
+        }
+
+        .page-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* HERO HOME */
+        .hero-home {
+            min-height: 90vh;
+            background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.6)), url('store-profile.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            color: var(--white);
+            text-align: center;
+        }
+
+        .hero-home h1 {
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
+            color: var(--white);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-home span {
+            color: var(--primary-red);
+        }
+
+        .hero-home p {
+            font-size: 1.25rem;
+            margin-bottom: 2.5rem;
+            max-width: 700px;
+            margin-inline: auto;
+            opacity: 0.9;
+        }
+
+        /* FEATURES */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 5rem 0;
+            background: var(--light-gray);
+        }
+
+        .feature-item {
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .feature-item:hover {
+            transform: translateY(-10px);
+        }
+
+        .icon-box {
+            font-size: 2.5rem;
+            color: var(--primary-red);
+            margin-bottom: 1.5rem;
+        }
+
+        /* ABOUT */
+        .about-section {
+            padding: 8rem 0;
+        }
+
+        .about-flex {
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+            flex-wrap: wrap;
+        }
+
+        .about-img {
+            flex: 1;
+            min-width: 300px;
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .about-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .about-text h2 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .tagline {
+            color: var(--primary-red);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            display: block;
+            margin-bottom: 1rem;
+        }
+
+        /* PRODUCTS */
+        .product-browser {
+            padding: 4rem 0;
+        }
+
+        .browser-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 3rem;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        #search-input {
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            border: 1px solid #ddd;
+            width: 300px;
+        }
+
+        .filter-group {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            border: 1px solid #ddd;
+            background: white;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .filter-btn.active {
+            background: var(--primary-red);
+            color: white;
+            border-color: var(--primary-red);
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 1px solid #f0f0f0;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .p-img {
+            height: 200px;
+            background: #f8f9fa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            overflow: hidden;
+        }
+
+        .p-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .product-card:hover .p-img img {
+            transform: scale(1.1);
+        }
+
+        .p-info {
+            padding: 1.5rem;
+        }
+
+        .p-cat {
+            color: var(--primary-red);
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .p-price {
+            font-weight: 800;
+            color: var(--black);
+            margin: 1rem 0;
+            display: block;
+        }
+
+        /* PRODUCT DETAIL OVERLAY */
+        .detail-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 2000;
+            display: none;
+            padding: 2rem;
+            overflow-y: auto;
+        }
+
+        .detail-modal {
+            background: white;
+            max-width: 1000px;
+            margin: 2rem auto;
+            border-radius: 30px;
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .detail-img-box {
+            flex: 1;
+            min-width: 300px;
+            background: #f8f9fa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 8rem;
+            overflow: hidden;
+        }
+
+        .detail-img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .detail-info-box {
+            flex: 1;
+            min-width: 300px;
+            padding: 3rem;
+        }
+
+        .close-detail {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 2rem;
+            cursor: pointer;
+            color: #444;
+            z-index: 10;
+        }
+
+        .related-products {
+            width: 100%;
+            padding: 3rem;
+            border-top: 1px solid #eee;
+            background: #fafafa;
+        }
+
+        .related-products h3 {
+            margin-bottom: 2rem;
+            font-size: 1.5rem;
+        }
+
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .related-card {
+            background: white;
+            padding: 1rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .related-card .r-img {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .related-card h4 {
+            font-size: 0.9rem;
+            color: var(--black);
+        }
+
+        /* CONTACT */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            padding: 6rem 0;
+        }
+
+        .info-card {
+            background: var(--light-gray);
+            padding: 3rem;
+            border-radius: 24px;
+            text-align: center;
+        }
+
+        .info-card i {
+            font-size: 2rem;
+            color: var(--primary-red);
+            margin-bottom: 1rem;
+        }
+
+        .map-box {
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            height: 400px;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #000;
+            color: var(--white);
+            padding: 5rem 0 2rem;
+            border-top: 5px solid var(--primary-red);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 4rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-title {
+            color: var(--white);
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .footer-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--primary-red);
+        }
+
+        .footer-contact-info li {
+            display: flex;
+            gap: 1.2rem;
+            margin-bottom: 1.2rem;
+            color: #cbd5e1;
+        }
+
+        .footer-contact-info i {
+            color: var(--primary-red);
+            font-size: 1.2rem;
+            width: 20px;
+            text-align: center;
+        }
+
+        .footer-contact-info a {
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        .footer-contact-info a:hover {
+            color: var(--white);
+            text-decoration: underline;
+        }
+
+        .footer-map-container {
+            border-radius: 15px;
+            overflow: hidden;
+            border: 2px solid var(--dark-gray);
+            height: 200px;
+            margin-top: 1rem;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            text-align: center;
+            font-size: 0.875rem;
+            color: #64748b;
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            width: 50px;
+            height: 50px;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 5px 15px rgba(0, 0, 0, 0.2);
+            z-index: 2100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1) translateY(-5px);
+            background-color: #128C7E;
+            color: #FFF;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background: white;
+                flex-direction: column;
+                padding: 2rem;
+                border-bottom: 1px solid #ddd;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+
+            .hero-home h1 {
+                font-size: 2.5rem;
+            }
+
+            .footer-grid {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <a onclick="navigateTo('home')" class="logo" style="cursor: pointer;">UD. <span>FIKTIN JAYA
+                        LIFT</span></a>
+                <ul class="nav-links" id="nav-links">
+                    <li><a onclick="navigateTo('home')" id="link-home">Beranda</a></li>
+                    <li><a onclick="navigateTo('about')" id="link-about">Tentang Kami</a></li>
+                    <li><a onclick="navigateTo('products')" id="link-products">Produk</a></li>
+                    <li><a onclick="navigateTo('rental')" id="link-rental">Sewa Lift Cor</a></li>
+                    <li><a onclick="navigateTo('contact')" id="link-contact">Kontak</a></li>
+                </ul>
+                <div class="menu-toggle" onclick="toggleMenu()">
+                    <span></span><span></span><span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Home Page -->
+        <div id="home" class="page-content active">
+            <section class="hero-home">
+                <div class="container">
+                    <h1><span>Pusat Penjualan Material Bangunan</span> dan Penyewaan Lift Cor</h1>
+                    <p>Menyediakan Bahan Bangunan Lengkap dan layanan sewa Lift Cor Profesional</p>
+                </div>
+            </section>
+
+            <section class="container">
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <div class="icon-box"><i class="fas fa-shield-halved"></i></div>
+                        <h3>Kualitas Premium</h3>
+                        <p>Produk pilihan dengan standar nasional untuk daya tahan maksimal.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="icon-box"><i class="fas fa-tags"></i></div>
+                        <h3>Harga Kompetitif</h3>
+                        <p>Penawaran harga terbaik untuk proyek kontraktor maupun pribadi.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="icon-box"><i class="fas fa-truck-fast"></i></div>
+                        <h3>Pengiriman Cepat</h3>
+                        <p>Armada logistik siap antar pesanan tepat waktu ke lokasi Anda.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- About Page -->
+        <div id="about" class="page-content">
+            <section class="container about-section">
+                <div class="about-flex">
+                    <div class="about-img">
+                        <img src="store-profile.jpg" alt="UD. FIKTIN Store">
+                    </div>
+                    <div class="about-text">
+                        <span class="tagline">Profil Toko</span>
+                        <h2>Dipercaya Sejak 2018</h2>
+                        <p>UD. FIKTIN JAYA LIFT berdiri dengan misi menjadi partner utama bagi masyarakat Sukaraja dan
+                            sekitarnya
+                            dalam menyediakan kebutuhan material bangunan.</p>
+                        <p>Kami memahami bahwa bangunan adalah aset berharga. Keamanan dan kekuatan konstruksi dimulai
+                            dari pemilihan material yang tepat. Itulah alasan kami hanya menyediakan produk berkualitas
+                            tinggi.</p>
+                        <ul style="margin-top: 2rem;">
+                            <li style="display: flex; gap: 1rem; margin-bottom: 1rem;"><i class="fas fa-check-circle"
+                                    style="color: var(--primary-red);"></i> Integritas & Kepercayaan</li>
+                            <li style="display: flex; gap: 1rem; margin-bottom: 1rem;"><i class="fas fa-check-circle"
+                                    style="color: var(--primary-red);"></i> Layanan Cepat & Ramah</li>
+                            <li style="display: flex; gap: 1rem; margin-bottom: 1rem;"><i class="fas fa-check-circle"
+                                    style="color: var(--primary-red);"></i> Stok Terlengkap</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Products Page -->
+        <div id="products" class="page-content">
+            <section class="container product-browser">
+                <div class="browser-header">
+                    <h2>Katalog Produk</h2>
+                    <div class="filter-group">
+                        <button class="filter-btn active" onclick="filterCategory('all', this)">Semua</button>
+                        <button class="filter-btn" onclick="filterCategory('besi-baja', this)">Besi & Baja
+                            Ringan</button>
+                        <button class="filter-btn" onclick="filterCategory('atap-plafon', this)">Atap & Plafon</button>
+                        <button class="filter-btn" onclick="filterCategory('semen-perekat', this)">Semen &
+                            Perekat</button>
+                        <button class="filter-btn" onclick="filterCategory('cat-pelapis', this)">Cat & Pelapis</button>
+                        <button class="filter-btn" onclick="filterCategory('material-dasar', this)">Material
+                            Dasar</button>
+                    </div>
+                    <input type="text" id="search-input" placeholder="Cari material..."
+                        oninput="handleSearch(this.value)">
+                </div>
+
+                <div class="product-grid" id="product-list">
+                    <!-- Loaded via JS -->
+                </div>
+            </section>
+        </div>
+
+        <!-- Rental Page -->
+        <div id="rental" class="page-content">
+            <section class="container product-browser">
+                <div class="browser-header">
+                    <h2>Katalog Sewa Lift Cor</h2>
+                    <p style="color: var(--medium-gray);">Penyediaan unit Lift Cor berkualitas untuk efisiensi proyek
+                        Anda.</p>
+                </div>
+
+                <div class="product-grid" id="rental-list">
+                    <!-- Loaded via JS -->
+                </div>
+            </section>
+        </div>
+
+        <!-- Contact Page -->
+        <div id="contact" class="page-content">
+            <section class="container contact-grid">
+                <div class="info-card">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>Lokasi</h3>
+                    <p>Sukaraja, Jerowaru, Lombok Timur, NTB 83581</p>
+                    <a href="https://maps.app.goo.gl/kUVj3wK2i6gtUhUV7" target="_blank"
+                        style="color: var(--primary-red); font-weight: 700;">Buka Google Maps →</a>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-phone"></i>
+                    <h3>WhatsApp</h3>
+                    <p><a href="https://wa.me/6287784427397" target="_blank"
+                            style="color: inherit; font-weight: 600;">Hubungi Kami: 0877 8442 7397</a></p>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-clock"></i>
+                    <h3>Jam Kerja</h3>
+                    <p>Setiap Hari: 08:00 - 17:50 WITA</p>
+                </div>
+            </section>
+
+            <section class="container" style="margin-bottom: 6rem;">
+                <div class="map-box"
+                    style="background: #f0f0f0; display: flex; align-items: center; justify-content: center; position: relative;">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3941.5242!2d116.5028!3d-8.8465!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2d6ccbc000000000%3A0x0!2zOMKwNTAnNDcuNCJTIDExNsKwMzAnMTAuMSJF!5e0!3m2!1sid!2sid!4v1705141200000!5m2!1sid!2sid"
+                        width="100%" height="400" style="border:0; width: 100%; height: 100%;" allowfullscreen=""
+                        loading="lazy">
+                    </iframe>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Product Detail Modal -->
+    <div id="detail-overlay" class="detail-overlay">
+        <div class="detail-modal" id="detail-modal-content">
+            <!-- Loaded via JS -->
+        </div>
+    </div>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/6287784427397" class="whatsapp-float" target="_blank" title="Hubungi Kami via WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Column 1: Tentang Kami -->
+                <div class="footer-col">
+                    <h4 class="footer-title">Tentang Kami</h4>
+                    <a onclick="navigateTo('home')" class="logo"
+                        style="color: white; cursor: pointer; display: block; margin-bottom: 1.5rem;">UD. <span
+                            style="color: var(--primary-red);">FIKTIN JAYA LIFT</span></a>
+                    <p style="color: #94a3b8; line-height: 1.8;">UD. FIKTIN JAYA LIFT adalah pusat penyedia besi dan
+                        material
+                        bangunan terpercaya di Lombok Timur sejak 2018. Kami berkomitmen memberikan solusi konstruksi
+                        terbaik bagi pelanggan kami.</p>
+                </div>
+
+                <!-- Column 2: Hubungi Kami -->
+                <div class="footer-col">
+                    <h4 class="footer-title">Hubungi Kami</h4>
+                    <ul class="footer-contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> Sukaraja, Jerowaru, Lombok Timur, NTB 83581</li>
+                        <li><i class="fab fa-whatsapp"></i> <a href="https://wa.me/6287784427397"
+                                target="_blank">WhatsApp: 0877 8442 7397</a></li>
+                        <li><i class="fas fa-clock"></i> Setiap Hari: 08:00 - 17:50 WITA</li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Lokasi Toko -->
+                <div class="footer-col">
+                    <h4 class="footer-title">Lokasi Toko</h4>
+                    <div class="footer-map-container" style="background: #222;">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3941.5242!2d116.5028!3d-8.8465!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2d6ccbc000000000%3A0x0!2zOMKwNTAnNDcuNCJTIDExNsKwMzAnMTAuMSJF!5e0!3m2!1sid!2sid!4v1705141200000!5m2!1sid!2sid"
+                            width="100%" height="200" style="border:0; width: 100%; height: 100%;" allowfullscreen=""
+                            loading="lazy">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 UD. FIKTIN JAYA LIFT. All Rights Reserved. Solusi Proyek Anda Sejak 2018.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const products = [
+            // Besi & Baja Ringan
+            { id: 1, name: "Besi Beton Polos SNI", category: "besi-baja", description: "Besi beton berkualitas tinggi untuk struktur bangunan yang kokoh dan tahan lama.", image: "assets/Besi-Beton.jfif", price: "Hubungi Admin", specs: ["Ukuran: 6-12mm", "Standar: SNI", "Kualitas: Grade A"] },
+            { id: 2, name: "Baja Ringan Galvalum", category: "besi-baja", description: "Rangka atap baja ringan galvalum yang anti karat dan mudah dipasang.", image: "assets/Konstruksi-baja-ringan.jfif", price: "Rp 75.000 / Btg", specs: ["Tebal: 0.75mm", "Panjang: 6m", "Material: Galvalum"] },
+            { id: 11, name: "Besi Hollow Hitam", category: "besi-baja", description: "Besi kotak hitam serbaguna untuk pagar, kanopi, dan furnitur industri.", image: "assets/Besi-Hollow.jpg", price: "Hubungi Admin", specs: ["Ukuran: 40x40", "Tebal: 1.2mm", "Panjang: 6m"] },
+            { id: 12, name: "Besi Siku L", category: "besi-baja", description: "Besi siku dengan sudut presisi untuk berbagai kebutuhan konstruksi.", image: "assets/Besi-Siku.webp", price: "Hubungi Admin", specs: ["Ukuran: 4x4", "Tebal: 3mm", "Panjang: 6m"] },
+            { id: 21, name: "Besi Polos 8mm", category: "besi-baja", description: "Besi beton polos ukuran 8mm untuk tulangan konstruksi ringan.", image: "assets/Besi-Polos-8.webp", price: "Hubungi Admin", specs: ["Diameter: 8mm", "Standar: SNI"] },
+            { id: 22, name: "Besi Polos 10mm", category: "besi-baja", description: "Besi beton polos ukuran 10mm untuk konstruksi rumah tinggal.", image: "assets/Besi-Polos-10.jpg", price: "Hubungi Admin", specs: ["Diameter: 10mm", "Standar: SNI"] },
+            { id: 23, name: "Besi Polos 12mm", category: "besi-baja", description: "Besi beton polos ukuran 12mm untuk daya dukung beban menengah.", image: "assets/Besi-Polos-12.webp", price: "Hubungi Admin", specs: ["Diameter: 12mm", "Standar: SNI"] },
+            { id: 24, name: "Reng Baja Ringan", category: "besi-baja", description: "Reng baja ringan sebagai tumpuan genteng yang stabil dan kokoh.", image: "assets/Reng-baja-ringan.jpg", price: "Hubungi Admin", specs: ["Tebal: 0.45mm", "Panjang: 6m"] },
+
+            // Atap & Plafon
+            { id: 4, name: "Atap Spandek Galvalum", category: "atap-plafon", description: "Atap spandek galvalum yang tahan panas dan korosi untuk gudang atau rumah.", image: "assets/Atap-baja-ringan-spandek.jpg", price: "Mulai Rp 55.000", specs: ["Lebar: 80cm", "Bahan: Zinc-Alum", "Tersedia Berbagai Warna"] },
+            { id: 7, name: "Plafon PVC Modern", category: "atap-plafon", description: "Plafon PVC dengan desain elegan, tahan air, dan sangat mudah dibersihkan.", image: "assets/plafon-pvc.jpg", price: "Hubungi Admin", specs: ["Tebal: 8mm", "Motif: Variatif", "Anti Rayap: Ya"] },
+            { id: 13, name: "Genteng Metal Pasir", category: "atap-plafon", description: "Genteng metal bertekstur pasir untuk meredam kebisingan dari hujan.", image: "assets/Atap-genteng.jpg", price: "Hubungi Admin", specs: ["Tipe: Pasir", "Material: Baja Lapis", "Ringan & Kuat"] },
+            { id: 25, name: "Plafon Kayu", category: "atap-plafon", description: "Plafon motif kayu untuk memberikan nuansa hangat dan natural pada ruangan.", image: "assets/Plafon-kayu.jfif", price: "Hubungi Admin", specs: ["Bahan: Kayu Berkualitas", "Desain: Klasik/Modern"] },
+
+            // Semen & Perekat
+            { id: 3, name: "Semen Tiga Roda", category: "semen-perekat", description: "Semen legendaris Tiga Roda dengan daya rekat yang luar biasa untuk semua tahap pembangunan.", image: "assets/Semen-tiga-roda.jpg", price: "Rp 62.000 / Sak", specs: ["Berat: 50kg", "Tipe: PCC", "Kegunaan: Universal"] },
+            { id: 8, name: "Semen Bosowa", category: "semen-perekat", description: "Semen Bosowa untuk hasil pengerjaan beton yang lebih kuat dan tekstur halus.", image: "assets/Semen-Bosowa.jpg", price: "Rp 60.000 / Sak", specs: ["Berat: 40kg", "Kualitas: Standar Proyek"] },
+
+            // Cat & Pelapis
+            { id: 6, name: "Cat Kaleng Besar", category: "cat-pelapis", description: "Cat berkualitas dalam kemasan besar untuk pengerjaan area luas.", image: "assets/Cat-kaleng.jpg", price: "Rp 120.000", specs: ["Volume: 25 Kg", "Warna: Multi-Color"] },
+            { id: 14, name: "Pelapis Anti Bocor", category: "cat-pelapis", description: "Waterproofing pelapis anti bocor untuk atap dan area lembab lainnya.", image: "assets/Pelapis-anti-bocor.jfif", price: "Rp 45.000 / Kg", specs: ["Sifat: Elastis", "Aplikasi: Kuas/Roll", "Tahan Cuaca: Ya"] },
+            { id: 17, name: "Cat Properti Eksterior", category: "cat-pelapis", description: "Cat pelindung luar ruangan yang tahan terhadap sinar UV dan pertumbuhan jamur.", image: "assets/Cat-property.jpg", price: "Hubungi Admin", specs: ["Jenis: Weather-Shield", "Garansi Warna: Ya"] },
+            { id: 26, name: "Cat Kaleng Kecil", category: "cat-pelapis", description: "Cat praktis ukuran kecil untuk perbaikan detail atau area sempit.", image: "assets/Cat-kelng-kecil.jfif", price: "Hubungi Admin", specs: ["Volume: 1-5 Kg"] },
+            { id: 27, name: "Pelapis Dinding", category: "cat-pelapis", description: "Cairan pelapis untuk memperkuat permukaan dinding sebelum pengecatan.", image: "assets/Pelapis-dinding.jpg", price: "Hubungi Admin", specs: ["Kegunaan: Sealer/Primer"] },
+
+            // Material Dasar
+            { id: 5, name: "Batu Bata Merah", category: "material-dasar", description: "Batu bata tanah liat bakar pilihan untuk dinding rumah yang sejuk dan kokoh.", image: "assets/Batu-bata.jpg", price: "Rp 800 / Biji", specs: ["Asal: Lokal Pilihan", "Kekuatan: Tinggi"] },
+            { id: 15, name: "Batako Bangunan", category: "material-dasar", description: "Batako semen pasir padat untuk pengerjaan dinding yang lebih cepat dan hemat biaya.", image: "assets/Batako.jpg", price: "Rp 3.500 / Biji", specs: ["Bahan: Semen & Pasir", "Standar Konstruksi"] },
+            { id: 16, name: "Pasir Cor / Plester", category: "material-dasar", description: "Pasir bersih bebas lumpur untuk campuran pengecoran atau plester dinding.", image: "assets/Pasir.webp", price: "Hubungi Admin", specs: ["Satuan: Ret / Pick-up"] },
+            { id: 18, name: "Krikil Beton", category: "material-dasar", description: "Batu krikil/split pecah mesin untuk campuran beton struktural.", image: "assets/Krikil.jpg", price: "Hubungi Admin", specs: ["Kualitas: Eks: Mesin Pecah"] },
+            { id: 28, name: "Mill Putih", category: "material-dasar", description: "Bubuk kalsium/mill putih untuk campuran plesteran halus.", image: "assets/Mill.webp", price: "Hubungi Admin", specs: ["Kegunaan: Campuran Semen"] },
+            { id: 29, name: "Cangkul Tanah", category: "material-dasar", description: "Alat cangkul baja kuat untuk pekerjaan penggalian dasar.", image: "assets/Cangkul.jfif", price: "Hubungi Admin", specs: ["Bahan: Baja", "Tanpa Gagang"] },
+            { id: 30, name: "Sekop Pasir", category: "material-dasar", description: "Sekop baja untuk memudahkan pemindahan material pasir dan kerikil.", image: "assets/sekop.avif", price: "Hubungi Admin", specs: ["Tipe: Sekop Pasir"] },
+            { id: 31, name: "Roll Cat", category: "material-dasar", description: "Kuas roll berkualitas untuk hasil pengecatan dinding yang rata.", image: "assets/Roll.avif", price: "Hubungi Admin", specs: ["Jenis: Roll Busa"] },
+            { id: 34, name: "Paku 10cm", category: "material-dasar", description: "Paku kayu ukuran 10cm untuk konstruksi bangunan kayu.", image: "assets/paku-10.webp", price: "Hubungi Admin", specs: ["Ukuran: 10cm", "Bahan: Besi Baja"] },
+            { id: 35, name: "Paku 12cm", category: "material-dasar", description: "Paku kayu ukuran 12cm untuk balok kayu besar.", image: "assets/Paku-12.jpg", price: "Hubungi Admin", specs: ["Ukuran: 12cm", "Kuat & Tajam"] },
+            { id: 36, name: "Paku Beton", category: "material-dasar", description: "Paku baja khusus untuk permukaan dinding beton yang keras.", image: "assets/Paku-Beton.jfif", price: "Hubungi Admin", specs: ["Bahan: Baja Galvani", "Tahan Karat"] },
+            { id: 37, name: "Pipa PVC", category: "material-dasar", description: "Pipa saluran air PVC berkualitas, tahan tekanan dan awet.", image: "assets/PIPA-pvc.jfif", price: "Hubungi Admin", specs: ["Tipe: AW/D", "Ukuran: Variasi"] },
+            { id: 38, name: "Kusen Kayu & Aluminium", category: "atap-plafon", description: "Kusen pintu dan jendela tersedia dalam bahan kayu pilihan dan aluminium modern.", image: "assets/Kusen-Kayu-aluminium.jpeg", price: "Hubungi Admin", specs: ["Material: Aluminium/Kayu", "Presisi Tinggi"] },
+            { id: 39, name: "Pintu Rumah Modern", category: "atap-plafon", description: "Pintu minimalis dengan bahan berkualitas untuk estetika dan keamanan rumah.", image: "assets/Pintu.webp", price: "Hubungi Admin", specs: ["Desain: Minimalis", "Bahan: Kayu/HPL"] },
+            { id: 40, name: "Lampu Penerangan", category: "material-dasar", description: "Berbagai jenis lampu untuk kebutuhan pencahayaan interior dan eksterior.", image: "assets/Lampu.jfif", price: "Hubungi Admin", specs: ["Tipe: LED / Hemat Energi"] }
+        ];
+
+        const rentals = [
+            { id: 101, name: "Set Tiang & Rel Lift Cor", category: "lift", description: "Satu set tiang dan rel lift cor untuk pengangkutan material ke lantai atas ruko atau gedung.", image: "assets/tiang-rel-lift-Cor.jpeg", price: "Hubungi Admin", specs: ["Material: Baja Tebal", "Sistem: Rel Bongkar Pasang", "Standar Proyek"] },
+            { id: 102, name: "Bucket Lift Cor", category: "lift", description: "Bucket khusus untuk mengangkut adukan cor atau material bangunan lainnya menggunakan lift.", image: "assets/bucket-lift-cor.jpeg", price: "Hubungi Admin", specs: ["Kapasitas: 0.5 - 1 Ton", "Bahan: Plat Besi Tahan Benturan"] },
+            { id: 103, name: "Mesin Diesel Penggerek", category: "lift", description: "Mesin diesel bertenaga besar sebagai penggerak utama sistem lift cor.", image: "assets/Diesel-penggerek.jpeg", price: "Hubungi Admin", specs: ["Tenaga: 24 HP", "Sistem: Winch / Seling", "Bahan Bakar: Solar"] },
+            { id: 104, name: "Mesin Mollen Cor (Mixer)", category: "mixer", description: "Mesin pengaduk beton (Mollen) kapasitas standar untuk campuran cor yang homogen.", image: "assets/Mollen-Cor.jpeg", price: "Rp 150.000 / Hari", specs: ["Kapasitas: 350-500 Liter", "Mesin: Diesel/Listrik", "Kondisi: Terawat"] },
+            { id: 105, name: "Mixer Beton Heavy Duty", category: "mixer", description: "Peralatan mixer beton kapasitas besar untuk kebutuhan pengecoran skala menengah.", image: "assets/Mixer-Beton.jpeg", price: "Hubungi Admin", specs: ["Tipe: Heavy Duty", "Efisiensi Tinggi", "Mudah Operasional"] }
+        ];
+
+        let currentCategory = 'all';
+        let searchQuery = '';
+
+        function navigateTo(pageId) {
+            document.querySelectorAll('.page-content').forEach(p => p.classList.remove('active'));
+            document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+
+            document.getElementById(pageId).classList.add('active');
+            document.getElementById('link-' + pageId).classList.add('active');
+
+            window.scrollTo(0, 0);
+            document.getElementById('nav-links').classList.remove('active');
+        }
+
+        function toggleMenu() {
+            document.getElementById('nav-links').classList.toggle('active');
+        }
+
+        function renderProducts() {
+            const list = document.getElementById('product-list');
+            const filtered = products.filter(p => {
+                const matchCat = currentCategory === 'all' || p.category === currentCategory;
+                const matchSearch = p.name.toLowerCase().includes(searchQuery.toLowerCase());
+                return matchCat && matchSearch;
+            });
+
+            list.innerHTML = filtered.map(p => `
+                <div class="product-card">
+                    <div class="p-img"><img src="${p.image}" alt="${p.name}"></div>
+                    <div class="p-info">
+                        <h3>${p.name}</h3>
+                        <a onclick="showDetail(${p.id}, 'product')" class="btn" style="background: #f0f0f0; width: 100%; margin-top: 1rem; justify-content: center; border-radius: 8px;">Detail Produk</a>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function renderRentals() {
+            const list = document.getElementById('rental-list');
+            list.innerHTML = rentals.map(r => `
+                <div class="product-card">
+                    <div class="p-img"><img src="${r.image}" alt="${r.name}"></div>
+                    <div class="p-info">
+                        <h3>${r.name}</h3>
+                        <a onclick="showDetail(${r.id}, 'rental')" class="btn" style="background: #f0f0f0; width: 100%; margin-top: 1rem; justify-content: center; border-radius: 8px;">Detail Sewa</a>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function filterCategory(cat, btn) {
+            currentCategory = cat;
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            renderProducts();
+        }
+
+        function handleSearch(val) {
+            searchQuery = val;
+            renderProducts();
+        }
+
+        function showDetail(id, type) {
+            const dataSource = type === 'product' ? products : rentals;
+            const p = dataSource.find(item => item.id === id);
+            const overlay = document.getElementById('detail-overlay');
+            const modal = document.getElementById('detail-modal-content');
+
+            // Find Related Products (same category, different ID)
+            const related = dataSource.filter(item => item.category === p.category && item.id !== p.id).slice(0, 4);
+
+            let relatedHTML = '';
+            if (related.length > 0) {
+                relatedHTML = `
+                    <div class="related-products">
+                        <h3>Produk Terkait</h3>
+                        <div class="related-grid">
+                            ${related.map(r => `
+                                <div class="related-card" onclick="showDetail(${r.id}, '${type}')">
+                                    <div class="r-img"><img src="${r.image}" alt="${r.name}" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;"></div>
+                                    <h4>${r.name}</h4>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                `;
+            }
+
+            modal.innerHTML = `
+                <span class="close-detail" onclick="hideDetail()">&times;</span>
+                <div style="display: flex; flex-wrap: wrap; width: 100%;">
+                    <div class="detail-img-box"><img src="${p.image}" alt="${p.name}"></div>
+                    <div class="detail-info-box">
+                        <span class="tagline">${p.category}</span>
+                        <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">${p.name}</h2>
+                        <p style="margin-bottom: 2rem; font-size: 1.1rem; color: #64748b;">${p.description}</p>
+                        <div style="margin-bottom: 2rem;">
+                            <h4 style="margin-bottom: 1rem;">Spesifikasi ${type === 'rental' ? 'Unit' : 'Produk'}:</h4>
+                            <ul style="grid; gap: 0.5rem;">
+                                ${p.specs.map(s => `<li>• ${s}</li>`).join('')}
+                            </ul>
+                        </div>
+                        <div style="display: flex; flex-direction: column; gap: 12px; margin-top: 20px;">
+                            <a href="https://wa.me/6287784427397?text=Halo%20Admin,%20saya%20ingin%20tanya%20${type === 'rental' ? 'sewa' : 'produk'}%20${p.name}" 
+                               target="_blank" class="btn btn-whatsapp" style="display: flex; width: 100%; border-radius: 12px;">
+                                Tanya via WhatsApp <i class="fab fa-whatsapp"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                ${relatedHTML}
+            `;
+            overlay.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+            overlay.scrollTo(0, 0); // Scroll to top of modal
+        }
+
+        function hideDetail() {
+            document.getElementById('detail-overlay').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal on click outside
+        window.onclick = function (event) {
+            const overlay = document.getElementById('detail-overlay');
+            if (event.target == overlay) hideDetail();
+        }
+
+        // Initial Load
+        document.addEventListener('DOMContentLoaded', () => {
+            renderProducts();
+            renderRentals();
+            document.getElementById('link-home').classList.add('active');
+        });
+    </script>
+</body>
+
+</html>
